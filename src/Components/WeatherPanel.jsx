@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Form from "./Form";
 import Card from "./Card";
 
-const WeatherPanel = () => {
+const WeatherPanel = ({ hideWeatherForecast }) => {
   let urlWeather = "https://api.openweathermap.org/data/2.5/weather?&appid=a09c6b737658ee4d2064ce178d619cc3&lang=es&units=metric";
   let urlCity = "&q=";
   let urlForecast = "https://api.openweathermap.org/data/2.5/forecast?&appid=a09c6b737658ee4d2064ce178d619cc3&lang=es&units=metric";
 
   const [weather, setWeather] = useState([]);
   const [forecast, setForecast] = useState([]);
-  const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const [location, setLocation] = useState("");
@@ -53,6 +52,9 @@ const WeatherPanel = () => {
         setLoading(false);
         setShow(false);
       });
+
+    // Ocultar el componente WeatherForecast
+    hideWeatherForecast();
   };
 
   return (
@@ -60,14 +62,11 @@ const WeatherPanel = () => {
       <Form newLocation={getLocation} />
 
       <Card
-
         showData={show}
         loadingData={loading}
         weather={weather}
         forecast={forecast}
-
       />
-
     </React.Fragment>
   );
 };
