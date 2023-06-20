@@ -54,8 +54,8 @@ function WeatherForecast() {
   }
 
   return (
-    <div className="container mx-auto mt-2">
-      <div className="card bg-black text-white md:flex">
+    <div className="container mx-auto mt-2 p-2">
+      <div className="card bg-black text-white md:flex p-1">
         <div className="md:w-1/2">
           <img
             src="https://images.pexels.com/photos/1525612/pexels-photo-1525612.jpeg"
@@ -63,7 +63,7 @@ function WeatherForecast() {
             className="rounded-start w-full h-full"
           />
         </div>
-        <div className="md:w-1/2 flex flex-col justify-center -mt-5">
+        <div className="md:w-1/2 flex flex-col justify-center -mt-3">
           <div className="text-center mx-auto">
             {currentCity && !searchCity ? (
               <>

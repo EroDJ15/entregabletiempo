@@ -18,7 +18,7 @@ const App = () => {
         <NavBar />
         <WeatherPanel hideWeatherForecast={hideWeatherForecast} />
         {showWeatherForecast && <WeatherForecast />}
-        <main className="bg-slate-600 min-h-screen text-white flex justify-center items-center font-principal-font p-1"></main>
+        <main className="bg-slate-600 min-h-screen text-white flex justify-center items-center font-principal-font p-4"></main>
       </section>
     </>
   );
