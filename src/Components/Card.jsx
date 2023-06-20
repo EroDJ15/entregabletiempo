@@ -1,7 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Spinner from './Spinner';
 
 function Card({ showData, loadingData, weather, forecast }) {
+  const [imageUrl, setImageUrl] = useState('');
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await fetch('https://pixabay.com/api/', {
+          headers: {
+            Authorization: 'f46744s2pNMQrtti98twgXuQr0eg6wwe4yHihpbeIBWF2cPLJOdF2dvw',
+          },
+        });
+        const data = await response.json();
+        const photos = data.photos;
+        if (photos && photos.length > 0) {
+          const randomIndex = Math.floor(Math.random() * photos.length);
+          const randomPhoto = photos[randomIndex];
+          setImageUrl(randomPhoto.src.large);
+        } else {
+          setImageUrl('');
+        }
+      } catch (error) {
+        console.error('Error al buscar las fotos:', error);
+      }
+    };
+
+    fetchImage();
+  }, []);
+
   const date = new Date();
   const dateString = date.toLocaleDateString();
   const timeString = date.toLocaleTimeString();
@@ -48,7 +75,7 @@ function Card({ showData, loadingData, weather, forecast }) {
             <div className="card bg-black text-white md:flex p-1">
               <div className="md:w-1/2">
                 <img
-                  src="https://images.pexels.com/photos/1525612/pexels-photo-1525612.jpeg"
+                  src={imageUrl}
                   alt="clima"
                   className="rounded-start w-full h-full"
                 />
