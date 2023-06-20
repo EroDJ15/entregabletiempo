@@ -7,7 +7,7 @@ function Card({ showData, loadingData, weather, forecast }) {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await fetch('https://pixabay.com/api/', {
+        const response = await fetch('https://api.pexels.com/v1/search?query=clima', {
           headers: {
             Authorization: 'f46744s2pNMQrtti98twgXuQr0eg6wwe4yHihpbeIBWF2cPLJOdF2dvw',
           },
