@@ -58,7 +58,7 @@ function WeatherForecast() {
       <div className="card bg-black text-white md:flex p-1">
         <div className="md:w-1/2">
           <video
-            src="/public/images/Seul.mp4"
+            src="/images/Seul.mp4"
             alt="clima"
             className="rounded-start w-auto h-full object-cover video-transition opacity-100 transition-opacity duration-600 ease-in-out hover:opacity-40"
             autoPlay
