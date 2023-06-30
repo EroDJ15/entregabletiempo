@@ -71,18 +71,18 @@ function Card({ showData, loadingData, weather, forecast }) {
         <Spinner />
       ) : (
         showData === true ? (
-          <div className="container mx-auto mt-2 p-2">
+          <div className="container mx-auto mt-1 p-2">
             <div className="card bg-black text-white md:flex p-1">
-              <div className="md:w-1/2">
+              <div className="md:w-screen">
                 <img
                   src={imageUrl}
                   alt="clima"
-                  className="rounded-start w-full h-full"
+                  className="rounded-start w-auto h-full"
                 />
               </div>
-              <div className="md:w-1/2 flex flex-col justify-center -mt-3">
-                <div className="text-center mx-auto">
-                  <h3 className="text-4xl mt-1 border-t-3 font-bold p-2">{weather.name}</h3>
+              <div className="md:min-w-fit flex flex-col justify-center-mt-2">
+                <div className="text-center mx-auto justify-center">
+                  <h3 className="lg:text-2xl mt-10 border-t-3 font-bold p-7">{weather.name}</h3>
                   <p className="card-date">{dateString}</p>
                   <p className="card-time">{timeString}</p>
                   {iconUrl ? (
@@ -94,7 +94,7 @@ function Card({ showData, loadingData, weather, forecast }) {
                   ) : (
                     <p>Error al cargar el icono del clima</p>
                   )}
-                  <p className="text-lg">{weather.weather[0].description}</p>
+                  <p className="text-xl">{weather.weather[0].description}</p>
                   <p className="text-sm text-gray-400">Temperatura: {weather.main.temp}°C</p>
                   <p className="text-sm text-gray-400">Sensación térmica: {weather.main.feels_like}°C</p>
                   <p className="text-sm text-gray-400">Humedad: {weather.main.humidity}%</p>
@@ -102,8 +102,8 @@ function Card({ showData, loadingData, weather, forecast }) {
                   <p className="text-sm text-gray-400">Velocidad del viento: {weather.wind.speed} km/h</p>
                   <p className="text-sm text-gray-400">Dirección del viento: {weather.wind.deg}°</p>
                 </div>
-                <hr className="p-2 mt-4 mb-4" />
-                <div className='flex text-center justify-between justify-items-center text-xs -mt-5'>
+                <hr className="p-2 mt-5 mb-4" />
+                <div className=' flex flex-wrap text-center justify-center text-xs -mt-3'>
                   <div className='flex flex-col items-center'>
                     <p>{forecastDate3}h</p>
                     <p className='flex grid-flow-row mx-8 description text-base'>{forecast.list[1].weather[0].description}</p>

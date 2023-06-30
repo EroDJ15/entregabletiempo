@@ -55,8 +55,8 @@ function WeatherForecast() {
 
   return (
     <div className="container mx-auto mt-2 p-2 min-h-screen">
-      <div className="card bg-black text-white md:flex p-1">
-        <div className="md:w-1/2">
+      <div className="card bg-black text-white md:flex p-2">
+        <div className="md:w-1/1">
           <video
             src="/images/Seul.mp4"
             alt="clima"
@@ -67,7 +67,7 @@ function WeatherForecast() {
           />
 
         </div>
-        <div className="md:w-1/2 flex flex-col justify-center -mt-3">
+        <div className="md:w-1/8 flex flex-col justify-center -mt-3">
           <div className="text-center mx-auto">
             {currentCity && !searchCity ? (
               <>
