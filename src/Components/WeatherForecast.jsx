@@ -54,20 +54,20 @@ function WeatherForecast() {
   }
 
   return (
-    <div className="container mx-auto mt-2 p-2 min-h-screen">
-      <div className="card bg-black text-white md:flex p-2">
-        <div className="md:w-1/1">
+    <div className="container mx-auto mt-1 p-2 md:h-min">
+      <div className="card bg-black text-white md:flex p-1">
+        <div className="md:w-screen">
           <video
             src="/images/Seul.mp4"
             alt="clima"
-            className="rounded-start w-auto h-full object-cover video-transition opacity-100 transition-opacity duration-600 ease-in-out hover:opacity-40"
+            className="rounded-start w-auto h-min object-cover video-transition opacity-100 transition-opacity duration-600 ease-in-out hover:opacity-40"
             autoPlay
             muted
             loop
           />
 
         </div>
-        <div className="md:w-1/8 flex flex-col justify-center -mt-3">
+        <div className="md:w-6/12 flex justify-center -mt-4 p-2 items-center">
           <div className="text-center mx-auto">
             {currentCity && !searchCity ? (
               <>
@@ -79,10 +79,10 @@ function WeatherForecast() {
                     <img
                       src={`http://openweathermap.org/img/w/${weatherInfo.weather[0].icon}.png`}
                       alt="icono"
-                      className="w-14 h-14 mx-auto"
+                      className="w-18 h-18 mx-auto text-center"
                     />
-                    <p className="text-lg">{weatherInfo.weather[0].description}</p>
-                    <p className="text-4xl mt-4 font-bold">{weatherInfo.main.temp}°C</p>
+                    <p className="text-lg flex-wrap">{weatherInfo.weather[0].description}</p>
+                    <p className="text-3xl text-center font-bold">{weatherInfo.main.temp}°C</p>
                   </>
                 )}
               </>
